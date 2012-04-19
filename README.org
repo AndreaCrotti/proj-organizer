@@ -1,0 +1,15 @@
+Proj-Organizer
+
+scala actors implementation of a project organizer
+
+* TODO see if it's worth including the sbt shell completion inside the interface
+
+* TODO which actor library should be used?
+
+* Every project should be an actor
+
+** Every action done on the repository should be an actor, for example
+   - backup
+   - clone
+   - fetch
+   - diff with something else
