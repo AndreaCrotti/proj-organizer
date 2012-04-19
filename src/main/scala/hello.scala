@@ -1,4 +1,7 @@
+// TODO: add the package declaration
 import sys.process._
+
+import scm
 
 object HelloScala {
   def main(args: Array[String]) {
@@ -6,6 +9,8 @@ object HelloScala {
     println("ls -l".!)
     val contents = Process("ls -l").lines
     contents foreach println
+
+    scm.run_actors
   }
 }
 

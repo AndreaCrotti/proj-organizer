@@ -4,6 +4,9 @@ scala actors implementation of a project organizer
 
 * TODO see if it's worth including the sbt shell completion inside the interface
 
+* TODO find what can be the configuration system, probably a DSL
+  which allows to define all the needed information for the repositories
+
 * TODO which actor library should be used?
 
 * Every project should be an actor
