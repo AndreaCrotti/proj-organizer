@@ -1,22 +1,30 @@
+package scm
+
 import scala.actors.Actor
 import scala.actors.Actor._
 import sys.process._
 
-val cmds = List("ls -l", "tree", "echo 'hello world'")
+abstract class Proc
+case object Run extends Proc
+case object Abort extends Proc
+case object Retry extends Proc
+
 
 object run_actors extends Application {
+  val cmds = List("ls -l", "tree", "echo 'hello world'")
   cmds foreach {
     val cm = new Command(_)
-    cm.start
+    // cm.start
+    // cm ! Run
   }
 }
 
-class Command extends actor {
+class Command(cmd: String) extends Actor {
   def act() {
     react {
-      case Start =>
+      case Run => 
         println("Running command")
-        Process(cm).lines foreach println
+      Process(cmd).lines foreach println
     }
   }
 }
